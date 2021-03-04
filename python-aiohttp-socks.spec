@@ -14,8 +14,12 @@ URL:            https://pypi.org/project/aiohttp-socks/
 Source:         https://files.pythonhosted.org/packages/51/da/f9bd57339175ec9253dbeba47d6b012a46f7165a6ee04b3df60799180809/aiohttp_socks-%{version}.tar.gz
 
 BuildArch:      noarch
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
+BuildRequires:  python-devel
+BuildRequires:  python-setuptools
+BuildRequires:  python-socks
+
+Requires: python-socks
+
 Provides:	python-%{pypi_name} = %{EVRD}
 
 %description %{_description}

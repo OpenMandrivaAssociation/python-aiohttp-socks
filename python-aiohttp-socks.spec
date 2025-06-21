@@ -2,8 +2,8 @@
 %global srcname aiohttp_socks
 
 Name:           python-%{module}
-Version:        0.7.1
-Release:        2
+Version:        0.10.1
+Release:        1
 Summary:        SOCKS proxy connector for aiohttp
 
 License:        ASL 2.0
@@ -12,6 +12,8 @@ Source:         https://files.pythonhosted.org/packages/source/a/%{srcname}/%{sr
 
 BuildRequires:	pkgconfig(python3)
 BuildRequires:  python3-setuptools
+
+BuildSystem:    python
 
 BuildArch:      noarch
 
@@ -22,17 +24,6 @@ SOCKS proxy connector for aiohttp. SOCKS4(a) and SOCKS5 are supported.
 %license LICENSE.txt
 %doc README.md
 %{python_sitelib}/%{srcname}/
-%{python_sitelib}/%{srcname}-*.egg-info/
-
+%{python_sitelib}/%{srcname}-%version.dist-info/
 #----------------------------------------------------------------------------
 
-%prep
-%autosetup -n %{srcname}-%{version}
-rm -vrf *.egg-info
-sed -i -e 's/\r//' README.md
-
-%build
-%py_build
-
-%install
-%py_install

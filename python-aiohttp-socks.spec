@@ -3,7 +3,7 @@
 
 Name:           python-%{module}
 Version:        0.10.1
-Release:        2
+Release:        3
 Summary:        SOCKS proxy connector for aiohttp
 
 License:        ASL 2.0
